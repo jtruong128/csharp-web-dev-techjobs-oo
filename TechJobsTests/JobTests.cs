@@ -42,15 +42,19 @@ namespace TechJobsTests
             Assert.IsFalse(job1.Id == job2.Id);
         }
 
-        /*Test for ToString()
+        //Test for ToString()
         [TestMethod]
-        public override void ToString()
+        public void TestToString()
         {
-            Job job = new Job();
-            string jobInfo = $"\nID: {Id}\nName: {job.Name}\nEmployer: {job.EmployerName}\n +Location: {job.EmployerLocation}" +
-                             $"\nPosition Type: {job.JobType}\nCore Competency: {job.JobCoreCompetency}";
-            
-        }*/
+            Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                      new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            string jobInfo = $"\nID: {job.Id}\nName: Product tester\nEmployer: ACME\nLocation: Desert" +
+                             $"\nPosition Type: Quality control\nCore Competency: Persistence";
+
+            Assert.IsTrue(job.ToString() == jobInfo);
+
+        }
 
 
     }
