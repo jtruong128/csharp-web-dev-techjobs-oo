@@ -27,6 +27,7 @@ namespace TechJobsOO
             JobCoreCompetency = jobCoreCompetency;
         }
 
+        // TODO: Generate Equals() and GetHashCode() methods.
         public override bool Equals(object obj)
         {
             return obj is Job job &&
@@ -39,18 +40,39 @@ namespace TechJobsOO
         }
 
         public override string ToString()
-        { 
-            string jobInfo = $"\nID: {Id}\nName: {Name}\nEmployer: {EmployerName}\n +Location: {EmployerLocation}" +
-                             $"\nPosition Type: {JobType}\nCore Competency: {JobCoreCompetency}";
-            return jobInfo;
-        }
+        {
+            string jobInfo;
+            const string dataStr = "Data not available";
+            string nameStr = Name == "" ? dataStr : Name;
+            string empNameStr = EmployerName.Value == "" ? dataStr : EmployerName.Value;
+            string empLocationStr = EmployerLocation.Value == "" ? dataStr : EmployerLocation.Value;
+            string jobTypeStr = JobType.Value == "" ? dataStr : JobType.Value;
+            string coreCompetencyStr = JobCoreCompetency.Value == "" ? dataStr : JobCoreCompetency.Value;
 
+           
+            if (nameStr == dataStr && empNameStr == dataStr && empLocationStr == dataStr
+                && jobTypeStr == dataStr && coreCompetencyStr == dataStr)
+            {
+               jobInfo = $"\n*****OOPS! This job ID: {Id} does not seem to have data ******";
+
+            }
+            else
+            {
+                jobInfo = $"\nID: {Id}\nName: {nameStr}\nEmployer: {empNameStr}\n +Location: {empLocationStr}" +
+                            $"\nPosition Type: {jobTypeStr}\nCore Competency: {coreCompetencyStr}";
+            }
+
+            return jobInfo;
+
+            
+        }
+       
 
 
         // TODO: Add the two necessary constructors.
 
 
-        // TODO: Generate Equals() and GetHashCode() methods.
+        
 
 
     }
