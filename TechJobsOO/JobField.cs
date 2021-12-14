@@ -18,6 +18,7 @@ namespace TechJobsOO
         {
             Value = value;
         }
+
        
     }
 }

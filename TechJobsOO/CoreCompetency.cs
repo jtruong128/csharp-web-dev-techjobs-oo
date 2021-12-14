@@ -16,10 +16,10 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
-        public override string ToString()
+      /*  public override string ToString()
         {
             return Value;
-        }
+        } */
     }
     
 }
