@@ -58,7 +58,7 @@ namespace TechJobsOO
             else
             {
                 jobInfo = $"\nID: {Id}\nName: {nameStr}\nEmployer: {empNameStr}\nLocation: {empLocationStr}" +
-                            $"\nPosition Type: {jobTypeStr}\nCore Competency: {coreCompetencyStr}";
+                            $"\nPosition Type: {jobTypeStr}\nCore Competency: {coreCompetencyStr}\n";
             }
 
             return jobInfo;

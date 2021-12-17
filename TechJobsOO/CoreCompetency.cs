@@ -5,7 +5,7 @@ namespace TechJobsOO
     {
         public CoreCompetency(string value) : base(value) { }
         
-        public override bool Equals(object obj)
+        /*public override bool Equals(object obj)
         {
             return obj is CoreCompetency competency &&
                    Id == competency.Id;
@@ -16,7 +16,7 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
-      /*  public override string ToString()
+        public override string ToString()
         {
             return Value;
         } */
